@@ -1,5 +1,5 @@
 # Nombre del proyecto
-Monitoreo de Procesos y Rendimiento del Sistema en Ubuntu
+Comandos Basicos
 
 ## Descripción
 El objetivo de esta práctica es analizar, supervisar y controlar la ejecución de procesos y el consumo de recursos de hardware en tiempo real desde la consola de Ubuntu.
@@ -22,10 +22,10 @@ Comprender el ciclo de vida de los procesos en Linux y el uso de métricas del s
 
 ## Video del funcionamiento
 `Readme.md`  
-[Ver video en YouTube](https://youtu.be/ejemplo_monitoreo_ubuntu)
+[Ver video en YouTube](https://youtu.be/l__w7yTP34Q)
 
 ## Conclusiones
 La actividad permitió entender cómo el sistema operativo asigna prioridades y recursos a cada tarea activa mediante identificadores únicos (PID). Se comprobó la eficacia de filtrar procesos en segundo plano con tuberías (`ps aux | grep`) y la importancia de administrar la memoria disponible (`free -h`) antes de que el sistema empiece a usar la memoria swap en exceso. Asimismo, se aprendió a manejar la terminación segura de programas con señales graduales como SIGTERM (`15`) antes de recurrir a la detención forzada con SIGKILL (`9`), evitando la corrupción de datos o inconsistencias en servicios críticos del sistema.
 
 ## Resultados
-`Resultados_Metricas_Sistema.pdf`
+[ver resultados](Resultados/resultado_comandosB)
