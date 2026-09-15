@@ -17,9 +17,7 @@ Familiarizarse con la consola de Ubuntu mediante la práctica de comandos de lis
 ## Evidencias de la práctica
 * Capturas de pantalla de la terminal mostrando la ejecución de los comandos de navegación y listado.
 
-<p align="center">
-  <img src="./Evidencias/c1.jpeg" alt="Captura de comandos en terminal" width="500">
-</p>
+<img src="Evidencias/C1.jpeg" width="300">
 
 ## Comandos
 [Ver comandos](Comandos/Readme.txt)
