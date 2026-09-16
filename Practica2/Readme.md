@@ -17,9 +17,9 @@ Familiarizarse con la administración de archivos y directorios en la consola de
 ## Evidencias de la práctica
 * Capturas de pantalla de la terminal mostrando la creación, edición, copiado y eliminación de directorios y archivos.
 
-<img src="Evidencias/s1.jpeg" width="300"> <img src="Evidencias/s2.jpeg" width="300">
-<img src="Evidencias/s3.jpeg" width="300"> <img src="Evidencias/s4.jpeg" width="300">
-<img src="Evidencias/s5.jpeg" width="300"> 
+<img src="Evidencias/1s.jpeg" width="300"> <img src="Evidencias/2s.jpeg" width="300">
+<img src="Evidencias/3s.jpeg" width="300"> <img src="Evidencias/4s.jpeg" width="300">
+<img src="Evidencias/5s.jpeg" width="300"> 
 
 ## Comandos
 [Ver comandos](Comandos/Readme.txt)
