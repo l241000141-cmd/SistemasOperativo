@@ -1,6 +1,7 @@
 # Nombre del proyecto
 Comandos Básicos en Ubuntu
 
+
 ## Descripción
 El objetivo de esta práctica es aprender y dominar los comandos básicos de Ubuntu, enfocándose en la interacción directa con el sistema de archivos a través de la terminal sin depender del entorno gráfico.
 
