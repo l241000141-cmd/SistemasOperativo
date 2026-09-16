@@ -32,4 +32,4 @@ Familiarizarse con la administración de archivos y directorios en la consola de
 La práctica permitió reforzar la administración directa del sistema de archivos en Ubuntu. Se comprendió la potencia y responsabilidad al usar comandos de manipulación como `cp` y `rm`, destacando la importancia de aplicar los parámetros correctos (como `-r` para procesar carpetas completas). El uso de la terminal nos enseña que las acciones son inmediatas y definitivas —especialmente al eliminar con `rm -r`, ya que no existe una papelera de reciclaje—, lo que exige mayor precaución al teclear, pero a cambio ofrece una velocidad y un nivel de control muy superior al uso tradicional del ratón.
 
 ## Resultados
-[Ver resultados](Resultados/resultados2.pdf)
+[Ver resultados](Resultados/Resultados2.pdf)
