@@ -17,7 +17,7 @@ Modelado y validación de comportamiento:
 Contrastar la dinámica temporal de los promedios de carga (load average) contra la teoría matemática de filtros exponenciales amortiguados del kernel de Linux.  
 
 ##Codigos y Scripts
-[Ver comandos](Código y Scripts/Readme.txt)
+[Ver comandos](Código y Scripts/Readme.txt).
 
 
 ##Reporte
