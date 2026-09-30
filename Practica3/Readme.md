@@ -23,8 +23,11 @@ Contrastar la dinámica temporal de los promedios de carga (load average) contra
 ##Reporte
 [Ver Reporte](Reporte/C1.pdf)
 
+
 ##Terminal
-<img src="Terminal/C1.png" width="300"> <img src="Terminal/C2.png" width="300">
+
+<img src="Terminal/C1.png" width="300"> 
+<img src="Terminal/C2.png" width="300">
 
 
 ## Video del funcionamiento
