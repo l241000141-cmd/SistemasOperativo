@@ -28,13 +28,13 @@ Contrastar la dinámica temporal de la memoria disponible (`MemAvailable`) y del
 
 ## Reporte
 
-Reporte/D1.pdf
+[Reporte](Reporte/D1.pdf)
 
 ## Terminal
 
-Terminal/D1.png
-Terminal/D2.png
-Terminal/D3.png
+[Ver Terminal](Practica4/Terminal/D1.png)
+[Ver Terminal]Practica4/Terminal/D2.png)
+[Ver Terminal](Practica4/Terminal/D3.png)
 
 
 ## Video del funcionamiento
