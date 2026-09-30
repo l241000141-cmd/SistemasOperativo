@@ -24,7 +24,7 @@ Contrastar la dinámica temporal de la memoria disponible (`MemAvailable`) y del
 
 ## Códigos y Scripts
 
-[Ver comandos](<Codigo_y_Scripts/Readme.txt>)
+[Ver comandos](<Código y Scripts/Readme.txt>)
 
 ## Reporte
 
