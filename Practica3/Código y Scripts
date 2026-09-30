@@ -1,0 +1,95 @@
+#!/bin/bash
+# =============================================================
+# configurar_salud.sh
+# Reproduce en un solo script todo lo hecho en la terminal:
+#   1. Crea el script salud.sh (monitor de RAM, disco y carga)
+#   2. Le da permisos de ejecución
+#   3. Lo programa en cron para que corra cada 2 minutos
+#   4. Verifica la tarea y muestra el reporte generado
+#
+# Uso: chmod +x configurar_salud.sh && ./configurar_salud.sh
+# =============================================================
+
+# --- Configuración -----------------------------------------------
+SCRIPT_SALUD="$HOME/salud.sh"     # Script monitor que se va a crear
+REPORTE="$HOME/salud.txt"         # Archivo donde se guardan los reportes
+
+# Línea de cron: minuto hora día-mes mes día-semana comando
+# "*/2" en el primer campo = cada 2 minutos
+TAREA_CRON="*/2 * * * * $SCRIPT_SALUD"
+
+# --- 1. Crear salud.sh -------------------------------------------
+# El heredoc con 'EOF' entre comillas evita que Bash expanda las
+# variables ($3, $REPORTE, etc.): el texto se escribe tal cual.
+cat > "$SCRIPT_SALUD" << 'EOF'
+#!/bin/bash
+# =============================================================
+# salud.sh
+# Registra el estado del sistema (RAM, disco y carga) y lo
+# agrega al final de salud.txt.
+# =============================================================
+
+# Archivo donde se guarda el reporte
+REPORTE="$HOME/salud.txt"
+
+# --- Encabezado con fecha y hora ---------------------------------
+echo "=== $(date '+%Y-%m-%d %H:%M:%S') ===" >> "$REPORTE"
+
+# --- Memoria RAM -------------------------------------------------
+# free -m muestra la memoria en MB. En la línea 2 (Mem:):
+#   $2 = total, $3 = usada
+RAM_INFO=$(free -m | awk 'NR==2 {printf "RAM usada: %s MB de %s MB (%.1f%%)", $3, $2, $3*100/$2}')
+echo "$RAM_INFO" >> "$REPORTE"
+
+# --- Disco -------------------------------------------------------
+# df -h / muestra el disco raíz. En la línea 2:
+#   $2 = tamaño, $3 = usado, $5 = porcentaje de uso
+DISCO_INFO=$(df -h / | awk 'NR==2 {print "Disco usado: " $3 " de " $2 " (" $5 ")"}')
+echo "$DISCO_INFO" >> "$REPORTE"
+
+# --- Carga del sistema -------------------------------------------
+# uptime termina con "load average: 1min, 5min, 15min".
+# Se toma lo que está después de "load average:".
+CARGA_INFO=$(uptime | awk -F'load average:' '{print $2}')
+echo "Carga del sistema:$CARGA_INFO" >> "$REPORTE"
+
+# --- Línea en blanco para separar un reporte de otro -------------
+echo "" >> "$REPORTE"
+EOF
+echo "Script creado: $SCRIPT_SALUD"
+
+# --- 2. Dar permisos de ejecución --------------------------------
+# 755 = el dueño lee/escribe/ejecuta; los demás solo leen/ejecutan
+chmod 755 "$SCRIPT_SALUD"
+ls -l "$SCRIPT_SALUD"
+
+# --- 3. Programar la tarea en cron -------------------------------
+# crontab -l falla si el usuario aún no tiene crontab; se ignora ese error.
+CRON_ACTUAL="$(crontab -l 2>/dev/null)"
+
+# Solo se agrega la línea si no existe, para no duplicarla
+# si este script se ejecuta más de una vez.
+if echo "$CRON_ACTUAL" | grep -qF "$SCRIPT_SALUD"; then
+    echo "La tarea ya estaba programada en cron."
+else
+    {
+        [ -n "$CRON_ACTUAL" ] && echo "$CRON_ACTUAL"
+        echo "$TAREA_CRON"
+    } | crontab -
+    echo "Tarea agregada a cron."
+fi
+
+# --- 4. Verificar la tarea instalada -----------------------------
+echo
+echo "Tareas de cron actuales:"
+crontab -l
+
+# --- 5. Generar un primer reporte y mostrarlo --------------------
+# Se ejecuta salud.sh una vez para no esperar los 2 minutos de cron.
+"$SCRIPT_SALUD"
+echo
+echo "Contenido de $REPORTE:"
+cat "$REPORTE"
+
+echo
+echo "Para ver el reporte en tiempo real usa: tail -f $REPORTE"
