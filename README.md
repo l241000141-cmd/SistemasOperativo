@@ -33,7 +33,7 @@ Contrastar la dinámica temporal de la memoria disponible (`MemAvailable`) y del
 ## Terminal
 
 [Ver Terminal](Practica4/Terminal/D1.png)
-[Ver Terminal]Practica4/Terminal/D2.png)
+[Ver Terminal](Practica4/Terminal/D2.png)
 [Ver Terminal](Practica4/Terminal/D3.png)
 
 
